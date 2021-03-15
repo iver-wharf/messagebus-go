@@ -8,3 +8,8 @@ Wharf and `WHARF_INSTANCE=dev` for your development instance.
 
 This value is used to use the same RabbitMQ instance with multiple Wharf
 instances.
+
+---
+
+Maintained by [Iver](https://www.iver.com/en).
+Licensed under the [MIT license](./LICENSE).
