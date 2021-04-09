@@ -1,5 +1,7 @@
 # Message bus Go library
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/iver-wharf/messagebus-go)](https://pkg.go.dev/github.com/iver-wharf/messagebus-go)
+
 Package prepared for creating and sending messages to RabbitMQ.
 
 To use it you have to set environment variable `WHARF_INSTANCE` with proper
