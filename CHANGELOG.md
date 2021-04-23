@@ -29,4 +29,3 @@ This project tries to follow [SemVer 2.0.0](https://semver.org/).
   - `MQConnection.Connect`
   - `MQConnection.CloseConnection`
   - `MQConnection.PublishMessage`
-
