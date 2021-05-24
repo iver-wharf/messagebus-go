@@ -34,22 +34,22 @@ const (
 )
 
 func NewConnection(host, port, user, pass, qName, vHost string, dssl bool, connAttempts uint64) (*MQConnection, error) {
-	if instance, ok := os.LookupEnv("WHARF_INSTANCE"); !ok {
+	instance, ok := os.LookupEnv("WHARF_INSTANCE")
+	if !ok {
 		return nil, fmt.Errorf("WHARF_INSTANCE environment variable required but not set")
-	} else {
-		return &MQConnection{
-			host:            host,
-			port:            port,
-			user:            user,
-			password:        pass,
-			queueName:       qName,
-			vHost:           vHost,
-			disableSSL:      dssl,
-			connAttempts:    connAttempts,
-			wharfInstanceID: instance,
-			UnexpectedClose: make(chan struct{}),
-		}, nil
 	}
+	return &MQConnection{
+		host:            host,
+		port:            port,
+		user:            user,
+		password:        pass,
+		queueName:       qName,
+		vHost:           vHost,
+		disableSSL:      dssl,
+		connAttempts:    connAttempts,
+		wharfInstanceID: instance,
+		UnexpectedClose: make(chan struct{}),
+	}, nil
 }
 
 func (conn *MQConnection) Connect() error {
