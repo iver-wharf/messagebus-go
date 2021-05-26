@@ -1,7 +1,10 @@
 {
   "scripts": {
-    "lint": "remark .",
-    "lint-fix": "remark . -o"
+    "lint": "\"$npm_execpath\" run lint-md && \"$npm_execpath\" run lint-go",
+    "lint-fix": "\"$npm_execpath\" run lint-md-fix",
+    "lint-md": "remark .",
+    "lint-md-fix": "remark . -o",
+    "lint-go": "revive -formatter stylish -config revive.toml ./..."
   },
   "devDependencies": {
     "remark-cli": "^9.0.0",
